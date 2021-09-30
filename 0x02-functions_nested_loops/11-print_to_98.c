@@ -73,6 +73,8 @@ void print_to_98(int n)
 					_putchar(first + '0');
 					_putchar(middle + '0');
 					_putchar(second + '0');
+					_putchar(',');
+					_putchar(' ');
 				}
 				else
 				{
