@@ -60,14 +60,30 @@ void print_to_98(int n)
 			}
 			else
 			{
-				first = n;
-				while (first >= 10)
-					first /= 10;
-				second = n % 10;
-				_putchar(first + '0');
-				_putchar(second + '0');
-				_putchar(',');
-				_putchar(' ');
+				if (n >= 100)
+				{
+					first = n;
+					while (first >= 10)
+						first /= 10;
+					middle = n % 100;
+					while (middle >= 10)
+						middle =/ 10;
+					second = n % 10;
+					_putchar(first + '0');
+					_putchar(middle + '0');
+					_putchar(second + '0');
+				}
+				else
+				{
+					first = n;
+					while (first >= 10)
+						first /= 10;
+					second = n % 10;
+					_putchar(first + '0');
+					_putchar(second + '0');
+					_putchar(',');
+					_putchar(' ');
+				}
 				n -= 1;
 			}
 		}
