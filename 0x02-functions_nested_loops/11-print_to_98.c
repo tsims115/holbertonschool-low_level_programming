@@ -67,8 +67,15 @@ void print_to_98(int n)
 					while (first >= 10)
 						first /= 10;
 					middle = n % 100;
-					while (middle >= 10)
-						middle /= 10;
+					if (middle >= 10)
+					{
+						while (middle >= 10)
+							middle /= 10;
+					}
+					else
+					{
+						middle = 0;
+					}
 					second = n % 10;
 					_putchar(first + '0');
 					_putchar(middle + '0');
