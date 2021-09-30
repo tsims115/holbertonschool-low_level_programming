@@ -10,6 +10,7 @@ void print_to_98(int n)
 {
 	int first;
 	int second;
+	int middle;
 
 	if (n != 98)
 	{
