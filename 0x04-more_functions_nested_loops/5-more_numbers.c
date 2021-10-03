@@ -18,6 +18,7 @@ void more_numbers(void)
 	{
 		for (j = 0; j <= 14; j++)
 		{
+			last = j;
 			if (j >= 10)
 			{
 				first = j;
