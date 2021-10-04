@@ -21,10 +21,7 @@ void more_numbers(void)
 			last = j;
 			if (j >= 10)
 			{
-				first = j;
-				last = j;
-				while (first >= 10)
-					first /= 10;
+				first = 1;
 				last = last % 10;
 				_putchar(first + '0');
 			}
