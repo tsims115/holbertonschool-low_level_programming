@@ -3,7 +3,7 @@
  * main - prints fizz, buzz, and fizzbuzz at certain poitns during loop
  *
  *
- * Return: Always zero
+ *
  *
  */
 
@@ -23,7 +23,9 @@ int main(void)
 		}
 		else if ((i % 5) == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
+			if (i != 100)
+				printf(" ");
 		}
 		else
 		{
