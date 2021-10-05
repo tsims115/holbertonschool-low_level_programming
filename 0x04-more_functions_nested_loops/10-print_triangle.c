@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_triangle - prints t4riangle to console
+ * print_triangle - prints triangle to console
  * @size: size of triangle
  *
  *
@@ -9,21 +9,25 @@
 
 void print_triangle(int size)
 {
-	int i, j;
+	int i, j, s;
 
-	for (i = 0; i < size; i++)
+	if (size > 0)
 	{
-		for (j = 0; j < size; j++)
+		for (i = 1; i <= size; i++)
 		{
-			if (j <= i)
-			{
-				_putchar('#');
-			}
-			else
+			for (j = 1; j <= (size - i); j++)
 			{
 				_putchar(' ');
 			}
+			for (s = 1; s <= i; s++)
+			{
+				_putchar('#');
+			}
+			_putchar('\n');
 		}
+	}
+	else
+	{
 		_putchar('\n');
 	}
 }
