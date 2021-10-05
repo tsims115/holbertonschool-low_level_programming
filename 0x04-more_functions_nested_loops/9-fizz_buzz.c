@@ -3,7 +3,7 @@
  * main - prints fizz, buzz, and fizzbuzz at certain poitns during loop
  *
  *
- *
+ * Return: Always zero
  *
  */
 
