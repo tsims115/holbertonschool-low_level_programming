@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * rev_string.c
+ * rev_string - saves string in reverse
  * @s:  string to save in reverse
  *
  *
@@ -21,7 +21,7 @@ void rev_string(char *s)
 		s++;
 		length++;
 	}
-	for (i = 0; i < length -1; i++)
+	for (i = 0; i < length - 1; i++)
 	{
 		tmpPtrB++;
 	}
@@ -33,5 +33,4 @@ void rev_string(char *s)
 		tmpPtrA++;
 		tmpPtrB--;
 	}
-	return;
 }
