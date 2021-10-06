@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * rev_string.c
  * @s:  string to save in reverse
@@ -26,7 +25,6 @@ void rev_string(char *s)
 	{
 		tmpPtrB++;
 	}
-	printf("%d\n", length);
 	for (i = 0; i < length / 2; i++)
 	{
 		tmpCh = *tmpPtrB;
