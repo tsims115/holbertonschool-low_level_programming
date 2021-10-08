@@ -8,25 +8,25 @@
  *
  */
 
-char *_strncpy(char *dest, char *src, int n )
+char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
 	int length = 0;
 
 	for (i = 0; i < n; i++)
-        {
-                if (*src == '\0')
-                {
-                        break;
-                }
-                else
-                {
-                        *dest = *src;
-                        dest++;
-                        src++;
-                }
-                length++;
-        }
+	{
+		if (*src == '\0')
+		{
+			break;
+		}
+		else
+		{
+			*dest = *src;
+			dest++;
+			src++;
+		}
+		length++;
+	}
 
 	for (i = 0; i < length; i++)
 		dest--;
