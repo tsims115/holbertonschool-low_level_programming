@@ -35,7 +35,9 @@ char *_strncat(char *dest, char *src, int n)
 		length2++;
 	}
 
-	for (i = 0; i < length + length2; i++)
+	length += length2;
+
+	for (i = 0; i < length; i++)
 		dest--;
 
 	return (dest);
