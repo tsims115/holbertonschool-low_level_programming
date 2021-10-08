@@ -41,8 +41,5 @@ char *_strncat(char *dest, char *src, int n)
 
 	for (i = 0; i < length - 1; i++)
 		dest--;
-	for (i = 0; i < length2 - 1; i++)
-		src--;
-
 	return (dest);
 }
