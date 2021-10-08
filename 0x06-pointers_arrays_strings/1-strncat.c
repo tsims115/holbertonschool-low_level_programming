@@ -14,30 +14,28 @@ char *_strncat(char *dest, char *src, int n)
 	int length2 = 0;
 	int i;
 
-	while (*src != '\0')
+	while (*dest != '\0')
 	{
-		if (*dest == '\0')
-		{
-			for (i = 0; i < n; i++)
-			{
-				*(dest++) = *(src++);
-				length++;
-				length2++;
-				if (*src == '\0')
-				{
-					*dest = '\0';
-					break;
-				}
-			}
-		}
-		length++;
 		dest++;
+		length++;
 	}
 
-	length++;
-	*dest = '\0';
+	for (i = 0; i < n; i++)
+	{
+		if (*src == '\0')
+		{
+			break;
+		}
+		else
+		{
+			*dest = *src;
+			dest++;
+			src++;
+		}
+		length2++;
+	}
 
-	for (i = 0; i < length - 1; i++)
+	for (i = 0; i < length + length2; i++)
 		dest--;
 
 	return (dest);
