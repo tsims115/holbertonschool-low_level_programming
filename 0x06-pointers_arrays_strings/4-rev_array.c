@@ -11,17 +11,17 @@
 void reverse_array(int *a, int n)
 {
 	int i;
-	int *ptrA, *ptrB, ch;
+	int *ptrA, *ptrB, tmp;
 
 	ptrA = a;
 	ptrB = a;
-	ptrB += n;
+	ptrB += n - 1;
 
 	for (i = 0; i < n / 2; i++)
 	{
-		ch = *ptrB;
+		tmp = *ptrB;
 		*ptrB = *ptrA;
-		*ptrA = ch;
+		*ptrA = tmp;
 		ptrB--;
 		ptrA++;
 	}
