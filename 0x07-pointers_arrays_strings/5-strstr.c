@@ -19,15 +19,16 @@ char *_strstr(char *haystack, char *needle)
 		{
 			for (j = 1; needle[j] != '\0'; j++)
 			{
-				if (*(haystack + j) == needle[j])
-					continue;
-				return (0);
+				if (*haystack != needle[j])
+					return (0);
+				haystack++;
 			}
+			haystack -= j;
 			return (haystack);
 		}
 		i++;
 		haystack++;
 	}
 	haystack -= i;
-	return (haystack);
+	return (0);
 }
