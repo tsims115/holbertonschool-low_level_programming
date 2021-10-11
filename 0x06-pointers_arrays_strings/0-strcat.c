@@ -10,34 +10,20 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int length = 0;
-	int i;
-	char *ptrA, *ptrB;
+	int len = 0;
+	int i = 0;
 
-	ptrA = dest;
-	ptrB = src;
+	while (*(dest + len) != '\0')
+	{
+		len++;
+	}
+	for (i = 0; *(src + i) != '\0'; i++)
+	{
+		*(dest + len) = *(src + i);
+		len++;
+	}
 
-	while (*ptrB != '\0')
-	{
-		if (*ptrA == '\0')
-		{
-			while (*ptrB != '\0')
-			{
-				*ptrA = *ptrB;
-				length++;
-				ptrB++;
-				ptrA++;
-			}
-		}
-		length++;
-		ptrA++;
-	}
-	length++;
-	*ptrA = *ptrB;
-	for (i = 0; i < length; i++)
-	{
-		ptrA--;
-	}
-	ptrA++;
-	return (ptrA);
+	*(dest + len) = *(src + i);
+
+	return (dest);
 }
