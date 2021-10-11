@@ -4,7 +4,7 @@
  * @dest: copies to this
  * @src: copies n bytes from this
  * @n: number of bytes ti copy from memory area
- *
+ * Return: Pointer to destianiton string
  *
  */
 
