@@ -10,8 +10,6 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	int j;
-
 	while (*haystack != '\0')
 	{
 		if (needle[0] == *haystack)
