@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+#define NULL 0
 /**
  * _strstr - locates a substring in string
  * @haystack: stack of hay to search
@@ -14,7 +14,7 @@ char *_strstr(char *haystack, char *needle)
 	int i, j;
 
 	if (*needle == '\0')
-		return ('\0');
+		return (NULL);
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
 		if (haystack[i] == needle[0])
@@ -34,5 +34,5 @@ char *_strstr(char *haystack, char *needle)
 			}
 		}
 	}
-	return ('\0');
+	return (NULL);
 }
