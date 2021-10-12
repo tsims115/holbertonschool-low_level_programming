@@ -11,11 +11,11 @@
 
 int _sqrt_num(int n, int guess)
 {
-        if (guess * guess == n)
-                return guess;
-        if (guess * guess > n)
-                return (-1);
-        return (_sqrt_num(n, guess + 1));
+	if (guess * guess == n)
+		return (guess);
+	if (guess * guess > n)
+		return (-1);
+	return (_sqrt_num(n, guess + 1));
 }
 
 /**
@@ -30,5 +30,5 @@ int _sqrt_recursion(int n)
 {
 	int guess = 1;
 
-	return _sqrt_num(n, guess);
+	return (_sqrt_num(n, guess));
 }
