@@ -33,5 +33,5 @@ int main(int argc, char **argv)
 		i++;
 	}
 	printf("%d\n", sum);
-	return (EXIT_SUCCESS);
+	return (0);
 }
