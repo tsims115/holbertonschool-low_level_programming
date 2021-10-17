@@ -15,10 +15,10 @@ int main(int argc, char **argv)
 	int i;
 	int sum;
 
-	if (argc == 1)
+	if (argc - 1 == 0)
 	{
 		printf("0\n");
-		return (EXIT_SUCCESS);
+		return (0);
 	}
 	i = 1;
 	sum = 0;
