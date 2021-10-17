@@ -5,7 +5,7 @@
  * @argc: how many arguements
  * @argv: array of char pointers arguements
  *
- *
+ * Return: ESIT_SUCCESS if successful
  *
  */
 
