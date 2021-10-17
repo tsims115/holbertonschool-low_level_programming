@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * main - prints out the arguements themselves
+ * @argc: how many arguements
+ * @argv: array of char pointers arguements
  *
- *
- *
- *
- *
+ * Return: EXIT_SUCCESS if succesful
  *
  */
 
