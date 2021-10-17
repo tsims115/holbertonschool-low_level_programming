@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 	if (argc - 1 == 0)
 	{
 		printf("0\n");
-		return (0);
+		return (EXIT_SUCCESS);
 	}
 	i = 1;
 	sum = 0;
