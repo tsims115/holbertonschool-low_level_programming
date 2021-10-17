@@ -5,7 +5,7 @@
  * @argc: how many arguements
  * @argv: array of char pointers arguements
  *
- *
+ * Return: EXIT_SUCCESS if successful
  *
  */
 
