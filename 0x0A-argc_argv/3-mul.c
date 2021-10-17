@@ -2,9 +2,10 @@
 #include <stdlib.h>
 /**
  * main - multiplies two numbers
- * @argc - number of arguements
- * @argv - numbers to multiply
+ * @argc: number of arguements
+ * @argv: numbers to multiply
  *
+ * Return: EXIT_SUCCESS if successful or 1 if not
  *
  */
 
@@ -13,7 +14,7 @@ int main(int argc, char **argv)
 	int num1;
 	int num2;
 
-	if (argc == 1)
+	if (argc - 1 <= 1)
         {
                 printf("Error\n");
                 return  (1);
