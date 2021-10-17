@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 	sum = 0;
 	while (argv[i] != argv[argc])
 	{
-		if  (atoi(argv[i]) == 0)
+		if  (atoi(argv[i]) == '\0')
 		{
 			printf("Error\n");
 			return (1);
