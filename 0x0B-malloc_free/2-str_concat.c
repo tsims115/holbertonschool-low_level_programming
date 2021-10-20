@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 	for (i = 0; s2[i] != '\0'; i++)
 		lens2++;
 
-	ps = malloc(sizeof(char) * (lens1 + lens2));
+	ps = malloc((sizeof(char) * (lens1 + lens2)) + 1);
 	if (ps == NULL)
 		return (NULL);
 
@@ -32,5 +32,6 @@ char *str_concat(char *s1, char *s2)
 		ps[i] = s1[i];
 	for (i = 0; s2[i] != '\0'; i++)
 		ps[lens1 + i] = s2[i];
+	ps[lens1 + i] = '\0';
 	return (ps);
 }
