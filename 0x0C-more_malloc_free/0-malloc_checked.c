@@ -8,7 +8,7 @@
  *
  *
  *
- *
+ * Return: void pointer to allocated memory
  *
  */
 
