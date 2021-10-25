@@ -31,7 +31,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (newStr == NULL)
 		return (NULL);
 
-	if(n >= lens2)
+	if (n >= lens2)
 		n = lens2;
 	for (i = 0; i < lens1; i++)
 		newStr[i] = s1[i];
