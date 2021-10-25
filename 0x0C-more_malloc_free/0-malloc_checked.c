@@ -4,10 +4,6 @@
 /**
  * malloc_checked - allocates space in memory
  * @b: how much space to use
- *
- *
- *
- *
  * Return: void pointer to allocated memory
  *
  */
