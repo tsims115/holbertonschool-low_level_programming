@@ -1,5 +1,6 @@
+#include <stdlib>
+#include <stdio.h>
 #include "main.h"
-#include <stdlib.h>
 /**
  * malloc_checked - allocates space in memory
  * @b: how much space to use
