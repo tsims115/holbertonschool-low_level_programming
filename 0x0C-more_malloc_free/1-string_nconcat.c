@@ -22,18 +22,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	newStr = malloc(sizeof(char) * (lens2 + lens1) + 1);
+	newStr = malloc((sizeof(char) * (lens2 + lens1)) + 1);
 	if (newStr == NULL)
 		return (NULL);
 
-	for (i = 0; i <= lens1; i++)
+	for (i = 0; i < lens1; i++)
 		newStr[i] = s1[i];
+
 	if (n >= lens2)
 		n = lens2;
 	for (j = 0; j < n; j++)
 	{
-		newStr[j + i] = s2[j];
+		newStr[i + j] = s2[j];
 	}
-	newStr[j + i] = '\0';
+	newStr[i + j] = '\0';
 	return (newStr);
 }
