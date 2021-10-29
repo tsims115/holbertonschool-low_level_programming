@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	if (((*op == 37) || (*op == 47)) && (num2 == 0))
 	{
 		printf("Error\n");
-		exit (100);
+		exit(100);
 	}
 	pop = get_op_func(op);
 	res = pop(num1, num2);
