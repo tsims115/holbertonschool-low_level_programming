@@ -20,18 +20,23 @@ int main(int argc, char **argv)
 	int (*pop)(int, int);
 
 	if (argc != 4)
-        {
-                printf("Error\n");
-                exit(98);
-        }
+	{
+		printf("Error\n");
+		exit(98);
+	}
 	num1 = atoi(argv[1]);
 	op = argv[2];
 	if (*op != 43 && *op != 45 && *op != 42 && *op != 47 && *op != 37)
-        {
-                printf("Error\n");
-                exit(99);
-        }
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	num2 = atoi(argv[3]);
+	if (((*op == 37) || (*op == 47)) && (num2 == 0))
+	{
+		printf("Error\n");
+		exit (100);
+	}
 	pop = get_op_func(op);
 	res = pop(num1, num2);
 	printf("%d\n", res);
