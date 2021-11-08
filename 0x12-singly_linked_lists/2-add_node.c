@@ -1,7 +1,7 @@
 #include "lists.h"
-#include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
  * add_node - add a new node at the beginning
  * @head: head of list
@@ -15,20 +15,16 @@ list_t *add_node(list_t **head, const char *str)
 	char *s;
 	int i;
 
-	if (node == NULL)
+	if (!node)
 	{
 		free(node);
 		return (NULL);
 	}
+	s = strdup(str);
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
-	s = malloc(sizeof(char) * i);
-	if (s == NULL)
-		return (NULL);
 	node->len = i;
-	for (i = 0; str[i] != '\0'; i++)
-		s[i] = str[i];
 	node->str = s;
 	node->next = (*head);
 	*head = node;
