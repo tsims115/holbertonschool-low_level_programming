@@ -15,6 +15,8 @@ list_t *add_node(list_t **head, const char *str)
 	list_t *node;
 	unsigned int i;
 
+	if (!head || !str)
+                return (NULL);
 	node = (list_t *)malloc(sizeof(list_t));
 	if (!node)
 	{
