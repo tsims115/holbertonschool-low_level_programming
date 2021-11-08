@@ -19,7 +19,6 @@ list_t *add_node(list_t **head, const char *str)
 	if (!node)
 	{
 		free(node->str);
-		free(node->len);
 		free(node->next);
 		free(node);
 		return (NULL);
