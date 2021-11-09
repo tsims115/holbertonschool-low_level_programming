@@ -10,22 +10,18 @@
 size_t print_list(const list_t *h)
 {
 	size_t n;
-	const list_t *p;
+	const list_t *p = h;
 
-	p = h;
-	n = 0;
-	while (p != NULL)
+	for (n = 0; p != NULL; n++)
 	{
 		if (p->str == NULL)
 		{
 			printf("[0] (nil)\n");
 			p = p->next;
-			n++;
 			continue;
 		}
 		printf("[%d] %s\n", p->len, p->str);
 		p = p->next;
-		n++;
 	}
 	return (n);
 }
