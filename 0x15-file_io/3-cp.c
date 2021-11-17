@@ -26,15 +26,15 @@ int main(int argc, char **argv)
 
 	srcd = open(argv[1], O_RDONLY);
 	if (srcd == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-                exit(98);
-        }
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	dest = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (dest == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
-                exit(98);
+		exit(98);
 	}
 	while (nchars == 1024)
 	{
