@@ -14,41 +14,35 @@
 
 int main(int argc, char **argv)
 {
-	int srcd, to, rd, wr, c;
+	int srcd, dest, nchars;
 	char buf[1024];
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+	nchars = 1024;
 
 	srcd = open(argv[1], O_RDONLY);
+	dest = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (srcd == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	rd = read(srcd, buf, 1024);
-	if (rd == -1)
+	while (nchars == 1024)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		nchars = read(srcd, buf, 1024);
+		write(dest, buf, nchars);
 	}
-	to = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
-	wr = write(to, buf, rd);
-	if (to == -1 || wr == -1)
+
+	if (close(dest) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
-	}
-	c = close(to);
-	if (c == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", dest);
 		exit(100);
 	}
-	close(srcd);
-	if (c == -1)
+	if (close(srcd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", srcd);
 		exit(100);
