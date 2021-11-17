@@ -25,11 +25,16 @@ int main(int argc, char **argv)
 	nchars = 1024;
 
 	srcd = open(argv[1], O_RDONLY);
-	dest = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (srcd == -1)
+        {
+                dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+                exit(98);
+        }
+	dest = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
+	if (dest == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]);
+                exit(98);
 	}
 	while (nchars == 1024)
 	{
@@ -47,5 +52,5 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", srcd);
 		exit(100);
 	}
-	return (1);
+	return (0);
 }
