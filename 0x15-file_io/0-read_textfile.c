@@ -20,7 +20,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (filename == NULL)
 		return (0);
-	buf = malloc(letters + 1);
+	buf = malloc(letters);
 	if (buf == NULL)
 	{
 		free(buf);
@@ -33,7 +33,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	n = read(fd, buf, letters);
 	if (n == -1)
 		return (0);
+	/*
 	buf[letters + 1] = '\0';
+	*/
 	printf("%s", buf);
 	free(buf);
 	close(fd);
