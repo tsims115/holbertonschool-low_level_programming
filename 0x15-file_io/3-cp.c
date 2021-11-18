@@ -30,8 +30,9 @@ int main(int argc, char **argv)
 	if (dest == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]),
 		exit(98);
-	while ((nchars = read(srcd, buf, 1024)) != 0)
+	while (nchars == 1024)
 	{
+		nchars = read(srcd, buf, 1024);
 		if (nchars == -1)
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]),
 			exit(98);
