@@ -28,8 +28,8 @@ int main(int argc, char **argv)
 		exit(98);
 	dest = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (dest == -1)
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[2]),
-		exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]),
+		exit(99);
 	while (nchars != 0)
 	{
 		nchars = read(srcd, buf, 1024);
