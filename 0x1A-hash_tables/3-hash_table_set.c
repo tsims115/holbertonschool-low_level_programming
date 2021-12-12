@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node = malloc(sizeof(hash_node_t));
 	hash_node_t *tmp = ht->array[idx];
 
-	if (!key || !ht || !node)
+	if (!key || !ht || !node || strcmp("", key) == 0)
 	{
 		free(node);
 		return (0);
