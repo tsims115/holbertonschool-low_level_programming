@@ -8,15 +8,17 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx = key_index((const unsigned char *)key, ht->size);
+	unsigned long int idx;
 	hash_node_t *node = malloc(sizeof(hash_node_t));
-	hash_node_t *tmp = ht->array[idx];
+	hash_node_t *tmp;
 
 	if (!key || !ht || !node || strcmp("", key) == 0)
 	{
 		free(node);
 		return (0);
 	}
+	idk = key_index((const unsigned char *)key, ht->size);
+	tmp = ht->array[idx];
 	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = NULL;
