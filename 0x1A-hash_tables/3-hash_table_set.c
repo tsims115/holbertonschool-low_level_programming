@@ -26,15 +26,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->next = NULL;
 	if (tmp == NULL)
 		ht->array[key_index((const unsigned char *)key, ht->size)] = node;
-	else
-	{
-		if (strcmp(key, tmp->key) == 0)
-		{
-			free(tmp->value);
-			tmp->value = strdup(value);
-		}
-		else
+        else
 			ht->array[0] = node;
-	}
 	return (1);
 }
