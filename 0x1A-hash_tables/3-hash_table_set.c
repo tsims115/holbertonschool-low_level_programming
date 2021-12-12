@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node = malloc(sizeof(hash_node_t));
 	hash_node_t *tmp = ht->array[idx];
 
-	if (!key || !ht || !node || !value)
+	if (!key || !ht || !node)
 	{
 		free(node);
 		return (0);
@@ -20,7 +20,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->key = strdup(key);
 	node->value = strdup(value);
 	node->next = NULL;
-	if (tmp == NULL)
+	if (ht->array[idx] == NULL)
 		ht->array[idx] = node;
 	else
 	{
