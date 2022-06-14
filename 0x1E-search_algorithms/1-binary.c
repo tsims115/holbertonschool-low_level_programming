@@ -21,7 +21,7 @@ int binary_search(int *array, size_t size, int value)
         if (ls > rs)
             return (-1);
         mp = (ls + rs) / 2;
-        printf("(mp: %d array[mp]: %d)Searching in array: ", mp, array[mp]);
+        printf("Searching in array: ", mp, array[mp]);
 		for (j = ls; j <= rs; j++)
         {
             printf("%d", array[j]);
