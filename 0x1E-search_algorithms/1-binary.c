@@ -12,29 +12,29 @@ int binary_search(int *array, size_t size, int value)
 {
 	int i, j, ls, rs, mp;
 
-    ls = 0;
-    rs = size - 1;
+	ls = 0;
+	rs = size - 1;
 	if (array == NULL)
 		return (-1);
 	for (i = (int)size; i >= (int)size / 2; i--)
 	{
-        if (ls > rs)
-            return (-1);
-        mp = (ls + rs) / 2;
-        printf("Searching in array: ");
+	if (ls > rs)
+		return (-1);
+	mp = (ls + rs) / 2;
+	printf("Searching in array: ");
 		for (j = ls; j <= rs; j++)
-        {
-            printf("%d", array[j]);
-            if (j != rs)
-                printf(", ");
-        }
-        printf("\n");
-        if (array[mp] == value)
-            return (mp);
-        else if (value < array[mp])
-            rs = mp - 1;
-        else
-            ls = mp + 1;
+	{
+		printf("%d", array[j]);
+		if (j != rs)
+			printf(", ");
+	}
+	printf("\n");
+	if (array[mp] == value)
+		return (mp);
+	else if (value < array[mp])
+		rs = mp - 1;
+	else
+		ls = mp + 1;
 	}
 	return -1;
 }
