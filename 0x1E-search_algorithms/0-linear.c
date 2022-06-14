@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * linear_search - seraches for a value linearly 
+ * linear_search - seraches for a value linearly
  * @array: array to search
  * @size: size of the array
  * @value: value to search for
@@ -25,4 +25,3 @@ int linear_search(int *array, size_t size, int value)
 	}
 	return -1;
 }
-
