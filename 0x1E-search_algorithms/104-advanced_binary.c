@@ -40,7 +40,7 @@ void binary_advance(int *a, size_t size, int ls, int rs, int v, int *fmp)
 		rs = mp;
 	}
 	else if (v < a[mp])
-		rs = mp - 1;
+		rs = mp;
 	else
 		ls = mp + 1;
 	binary_advance(a, size, ls, rs, v, fmp);
