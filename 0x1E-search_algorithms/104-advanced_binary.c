@@ -15,7 +15,7 @@ void binary_advance(int *a, size_t size, int ls, int rs, int v, int *fmp)
 {
 	int mp, i;
 
-	if (ls >= rs)
+	if (ls > rs)
 		return;
 	mp = (ls + rs) / 2;
 	printf("Searching in array: ");
