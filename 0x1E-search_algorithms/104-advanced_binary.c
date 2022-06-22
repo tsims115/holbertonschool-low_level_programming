@@ -11,7 +11,7 @@
  * @fmp: final point to store value of index
  */
 
-void binary_advance(int *a, size_t size, int ls, int rs, int v, int* fmp)
+void binary_advance(int *a, size_t size, int ls, int rs, int v, int *fmp)
 {
 	int mp, i;
 
