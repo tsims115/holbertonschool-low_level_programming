@@ -3,7 +3,6 @@
 
 /**
  * binary_advance - recursive way to binary advance search for first index
- * 
  * @a: array to use
  * @size: size of the array
  * @ls: left side
@@ -15,6 +14,7 @@
 void binary_advance(int *a, size_t size, int ls, int rs, int v, int* fmp)
 {
 	int mp, i;
+
 	if (ls >= rs)
 		return;
 	mp = (ls + rs) / 2;
