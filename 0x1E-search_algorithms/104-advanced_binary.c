@@ -2,6 +2,44 @@
 #include <stdio.h>
 
 /**
+ * binary_advance - recursive way to binary advance search for first index
+ * 
+ * @a: array to use
+ * @size: size of the array
+ * @ls: left side
+ * @rs: right side
+ * @v: value to search for
+ * @fmp: final point to store value of index
+ */
+
+void binary_advance(int *a, size_t size, int ls, int rs, int v, int* fmp)
+{
+	int mp, i;
+	if (ls >= rs)
+		return;
+	mp = (ls + rs) / 2;
+	printf("Searching in array: ");
+	for (i = ls; i <= rs; i++)
+	{
+		printf("%d", a[i]);
+		if (i != rs)
+			printf(", ");
+	}
+	printf("\n");
+	if (a[mp] == v)
+	{
+		*fmp = mp;
+		rs = mp;
+	}
+	else if (v < a[mp])
+		rs = mp - 1;
+	else
+		ls = mp + 1;
+	binary_advance(a, size, ls, rs, v, fmp);
+}
+
+
+/**
  * advanced_binary - searches for a value bianryly
  * @array: array to search
  * @size: size of the array
@@ -10,37 +48,16 @@
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	int i, j, ls, rs, mp, fmp;
+	int ls, rs;
+	int final_midpoint = -1;
+	int *fmp = &final_midpoint;
 
-	fmp = -1;
 	ls = 0;
 	rs = size - 1;
 	if (array == NULL)
 		return (-1);
-	for (i = (int)size; i >= (int)size / 2; i--)
-	{
-		if (ls >= rs)
-			break;
-		mp = (ls + rs) / 2;
-		printf("Searching in array: ");
-		for (j = ls; j <= rs; j++)
-		{
-			printf("%d", array[j]);
-			if (j != rs)
-				printf(", ");
-		}
-		printf("\n");
-		if (array[mp] == value)
-		{
-			fmp = mp;
-			rs = mp;
-		}
-		else if (value < array[mp])
-			rs = mp - 1;
-		else
-			ls = mp + 1;
-	}
-	if (fmp == -1)
+	binary_advance(array, size, ls, rs, value, fmp);
+	if (*fmp == -1)
 		return (-1);
-	return (fmp);
+	return (*fmp);
 }
