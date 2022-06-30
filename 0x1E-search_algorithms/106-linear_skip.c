@@ -10,12 +10,12 @@
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
 	skiplist_t *cur_node;
-	skiplist_t * last_node = list;
+	skiplist_t *last_node = list;
 	int flag = 0;
 	int express_idx;
 
 	if (list == NULL)
-		return(NULL);
+		return (NULL);
 	cur_node = list->express;
 
 	while (cur_node != NULL)
